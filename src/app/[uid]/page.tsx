@@ -36,7 +36,7 @@ export async function generateStaticParams() {
   const client = createClient();
   const pages = client.getAllByType("page");
 
-  return (await pages).map((page) => {
+  return pages.map((page) => {
     return { uid: page.uid };
   });
 }
