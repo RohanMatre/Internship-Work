@@ -32,7 +32,7 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const client = createClient();
   const pages = client.getAllByType("page");
 
