@@ -35,11 +35,11 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const client = createClient();
   const pages = client.getAllByType("blog_post");
 
-  return (await pages).map((page) => {
+  return pages.map((page) => {
     return { uid: page.uid };
   });
 }
