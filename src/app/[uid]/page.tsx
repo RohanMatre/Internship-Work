@@ -42,9 +42,13 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
   const client = createClient();
-  const pages = client.getAllByType("page");
+  
+  // Await the promise to get the array of pages
+  const pages = await client.getAllByType("blog_post");
 
-  return (await pages).map((page) => {
+  // Now you can safely map over the array
+  return pages.map((page) => {
     return { uid: page.uid };
   });
 }
+
