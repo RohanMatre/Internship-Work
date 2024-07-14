@@ -12,12 +12,12 @@ export default async function Page({ params }: { params: Params }) {
   let page;
 
   try {
-    page = await client.getByUID("page", params.uid);
+    page = client.getByUID("page", params.uid);
   } catch (error) {
     return notFound();
   }
 
-  return <SliceZone slices={page.data.slices} components={components} />;
+  return <SliceZone slices={(await page).data.slices} components={components} />;
 }
 
 export async function generateMetadata({
@@ -29,14 +29,14 @@ export async function generateMetadata({
   let page;
 
   try {
-    page = await client.getByUID("page", params.uid);
+    page = client.getByUID("page", params.uid);
   } catch (error) {
-    throw error; // Handle the error appropriately for metadata generation
+    throw error;
   }
 
   return {
-    title: page.data.meta_title,
-    description: page.data.meta_description,
+    title: (await page).data.meta_title,
+    description: (await page).data.meta_description,
   };
 }
 
