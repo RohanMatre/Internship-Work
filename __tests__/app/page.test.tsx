@@ -5,7 +5,7 @@ import Page, { generateMetadata } from '@/app/page';
 import { createClient } from '@/prismicio';
 
 // Mock necessary modules and functions
-jest.mock('@/prismicio', () => ({
+jest.mock('@/src/prismicio', () => ({
   createClient: jest.fn(),
 }));
 

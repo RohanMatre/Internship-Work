@@ -5,7 +5,7 @@ import { createClient } from '@/prismicio';
 import '@testing-library/jest-dom/extend-expect';
 
 // Mock the Prismic client
-jest.mock('@/prismicio', () => ({
+jest.mock('@/src/prismicio', () => ({
   createClient: jest.fn(),
 }));
 

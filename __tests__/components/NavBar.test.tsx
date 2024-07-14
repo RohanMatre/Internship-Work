@@ -14,7 +14,7 @@ jest.mock('@prismicio/next', () => ({
   PrismicNextLink: ({ children, ...props }: { children: React.ReactNode; field: any }) => <a {...props}>{children}</a>,
 }));
 
-jest.mock('@/components/Button', () => ({ linkField, label }: { linkField: any; label: string }) => (
+jest.mock('@/src/components/Button', () => ({ linkField, label }: { linkField: any; label: string }) => (
   <button>{label}</button>
 ));
 

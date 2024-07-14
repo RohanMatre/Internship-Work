@@ -6,11 +6,11 @@ import NavBar from '@/components/NavBar';
 import '@testing-library/jest-dom/extend-expect';
 
 // Mock the Prismic client
-jest.mock('@/prismicio', () => ({
+jest.mock('@/src/prismicio', () => ({
   createClient: jest.fn(),
 }));
 
-jest.mock('@/components/NavBar', () => jest.fn(() => <div>Mock NavBar</div>));
+jest.mock('@/src/components/NavBar', () => jest.fn(() => <div>Mock NavBar</div>));
 
 const mockSettings = {
   data: {

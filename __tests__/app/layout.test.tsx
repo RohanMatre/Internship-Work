@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect'; // for the "toBeInTheDocument" matcher
-import RootLayoutTestWrapper from '@/RootLayoutTestWrapper'; // Import the simplified wrapper
+import RootLayoutTestWrapper from '@/app/RootLayoutTestWrapper'; // Import the simplified wrapper
 import { Urbanist } from 'next/font/google';
 import { PrismicPreview } from '@prismicio/next';
 import { createClient, repositoryName } from '@/prismicio';
@@ -14,10 +14,10 @@ jest.mock('next/font/google', () => ({
 }));
 
 // Mock the Header component
-jest.mock('@/components/Header', () => () => <div data-testid="header">Header</div>);
+jest.mock('@/src/components/Header', () => () => <div data-testid="header">Header</div>);
 
 // Mock the Footer component
-jest.mock('@/components/Footer', () => () => <div data-testid="footer">Footer</div>);
+jest.mock('@/src/components/Footer', () => () => <div data-testid="footer">Footer</div>);
 
 // Mock PrismicPreview component
 jest.mock('@prismicio/next', () => ({
@@ -25,7 +25,7 @@ jest.mock('@prismicio/next', () => ({
 }));
 
 // Mock the Prismic client
-jest.mock('@/prismicio', () => ({
+jest.mock('@/src/prismicio', () => ({
   createClient: jest.fn(),
   repositoryName: 'test-repo',
 }));

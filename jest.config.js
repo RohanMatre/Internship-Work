@@ -11,8 +11,9 @@ const customJestConfig = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1', // Map @/* to <rootDir>/*
     '^@/app/(.*)$': '<rootDir>/app/$1', // Map @/app/* to <rootDir>/app/*
-    '^@/components/(.*)$': '<rootDir>/components/$1', // Map @/components/* to <rootDir>/components/*
-    '^@/slices/(.*)$': '<rootDir>/slices/$1', // Map @/slices/* to <rootDir>/slices/*
+    '^@/src/app/(.*)$': '<rootDir>/src/app/$1', // Map @/app/* to <rootDir>/app/*
+    '^@/src/components/(.*)$': '<rootDir>/src/components/$1', // Map @/components/* to <rootDir>/components/*
+    '^@/src/slices/(.*)$': '<rootDir>/src/slices/$1', // Map @/slices/* to <rootDir>/slices/*
   },
   testEnvironment: 'jest-environment-jsdom', // Use jsdom for testing environment
 };
